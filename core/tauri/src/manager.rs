@@ -512,7 +512,7 @@ impl<R: Runtime> WindowManager<R> {
 
   pub(crate) fn protocol_url(&self) -> Cow<'_, Url> {
     #[cfg(any(windows, target_os = "android"))]
-    return Cow::Owned(Url::parse("https://tauri.localhost").unwrap());
+    return Cow::Owned(Url::parse("http://tauri.localhost").unwrap());
     #[cfg(not(any(windows, target_os = "android")))]
     Cow::Owned(Url::parse("tauri://localhost").unwrap())
   }
